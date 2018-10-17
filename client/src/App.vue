@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <PostComponent />
+    <component v-bind:is="component"> </component>
   </div>
 </template>
 
@@ -11,7 +11,13 @@ import PostComponent from './components/PostComponent.vue';
 export default {
   name: 'app',
   components: {
-    PostComponent
+    'postComponent':PostComponent
+  },
+
+  data() {
+    return {
+      component: 'postComponent'
+    }
   }
 };
 </script>

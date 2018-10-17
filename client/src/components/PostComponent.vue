@@ -3,8 +3,8 @@
     <h1>Latest Posts</h1>
     <!-- CREATE POST HERE -->
     <div class="create-post">
-      <label for="create-post">Say Something... </label>
-      <input type="text" id="create-post" v-model="text" placeholder="Create a post">
+      <!-- label for="create-post">Say Something... </label> -->
+      <textarea type="text" id="create-post" cols="50" rows="5" v-model="text" placeholder="Create a post"></textarea>
       <button v-on:click="createPost">Post</button>
     </div>
     <hr>
