@@ -2,7 +2,7 @@
   <div id="app">
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <img alt="Vue logo" src="./assets/logo.png">
+  <img alt="Zentality logo" src="./assets/logo.png">
   <a class="navbar-brand" href="#">Zentality</a>    
   
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
         <a class="nav-link" href="#">Resources</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="C:\Users\Claire\Documents\18FS\IT5001\zentality-Proto\client\src\AboutUs.vue">About Us</a>
+        <a class="nav-link" href="C:\Users\khuup\OneDrive\Documents\GitHub\zentality-Proto\client\src\AboutUs.vue">About Us</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
