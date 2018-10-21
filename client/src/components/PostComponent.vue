@@ -1,6 +1,5 @@
 <template>
-  <div class = "container">
-    <h1>Latest Posts</h1>
+    <div class = "container">
     <!-- CREATE POST HERE -->
     <div class="create-post">
       <!-- label for="create-post">Say Something... </label> -->
@@ -8,6 +7,7 @@
       <button v-on:click="createPost">Post</button>
     </div>
     <hr>
+    <h1>Latest Posts</h1>
     <p class="error" v-if="error">{{ error }}</p>
     <div class="post-container">
       <div class="post"
