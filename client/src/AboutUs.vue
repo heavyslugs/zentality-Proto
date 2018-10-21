@@ -2,8 +2,10 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
-    <component v-bind:is="component"> </component>
     <button type="button" class="btn btn-success">Success</button>
+    <p>Claire James - Team Manager and Front-end Developer</p><br>
+    <p>Patrick Khuu - Business Analyst and Back-end Developer</p>
+    <p>Kris Perkins - Infrastructure Analyst</p>
   </div>
 </template>
 

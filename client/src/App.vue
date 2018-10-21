@@ -12,7 +12,7 @@
   <div class="collapse navbar-collapse" id="navbarColor02">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Journal</a>
@@ -21,7 +21,7 @@
         <a class="nav-link" href="#">Resources</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="C:\Users\Claire\Documents\18FS\IT5001\zentality-Proto\client\src\AboutUs.vue">About Us</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
