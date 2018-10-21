@@ -18,7 +18,7 @@
         <a class="nav-link" href="#">Journal</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Mental Health Resources</a>
+        <a class="nav-link" href="#">Resources</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About Us</a>
