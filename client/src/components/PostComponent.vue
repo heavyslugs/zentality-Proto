@@ -1,27 +1,28 @@
 <template>
-    <div class = "container">
-    <!-- CREATE POST HERE -->
-    <div class="create-post">
-      <!-- label for="create-post">Say Something... </label> -->
-      <textarea type="text" id="create-post" cols="50" rows="5" v-model="text" placeholder="Create a post"></textarea>
-      <button v-on:click="createPost">Post</button>
-    </div>
-    <hr>
-    <h1>Latest Posts</h1>
-    <p class="error" v-if="error">{{ error }}</p>
-    <div class="post-container">
-      <div class="post"
-        v-for="(post, index) in posts"
-        v-bind:item="post"
-        v-bind:index="index"
-        v-bind:key="post._id"
-        v-on:dblclick="deletePost(post._id)"
-      >
-        {{ `${post.createdAt.getMonth()}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
-        <p class="text">{{ post.text }}</p>
+  <table class="journal">
+    <div class="container">
+      <!-- CREATE POST HERE -->
+      <div class="create-post">
+        <!-- label for="create-post">Say Something... </label> -->
+        <textarea type="text" id="create-post" cols="94" rows="5" v-model="text" placeholder="Create a post"></textarea>
+        <button v-on:click="createPost">Post</button>
+      </div>
+      <hr>
+      <h1>Latest Posts</h1>
+      <p class="error" v-if="error">{{ error }}</p>
+      <div class="post-container">
+        <div class="post"
+          v-for="(post, index) in posts"
+          v-bind:item="post"
+          v-bind:index="index"
+          v-bind:key="post._id"
+        >
+          {{ `${post.createdAt.getMonth()}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
+          <p class="text">{{ post.text }}</p>
+        </div>
       </div>
     </div>
-  </div>
+  </table>
 </template>
 
 <script>
@@ -68,6 +69,11 @@ p.error {
   background-color: #ffc5c1;
   padding: 10px;
   margin-bottom: 15px;
+}
+div.create-post {
+  display: flex;
+  flex-direction: row;
+  padding-top: 25px;
 }
 
 div.post {

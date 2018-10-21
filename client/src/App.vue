@@ -18,6 +18,9 @@
         <a class="nav-link" href="#">Journal</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="#">Analytics</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#">Resources</a>
       </li>
       <li class="nav-item">
