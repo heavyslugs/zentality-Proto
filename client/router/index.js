@@ -1,3 +1,4 @@
+//Added this entire file!
 import Vue from 'vue'
 import Router from 'vue-router'
 import PostComponent from '@/components/PostComponent'
