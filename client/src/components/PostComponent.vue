@@ -73,7 +73,7 @@ p.error {
 div.create-post {
   display: flex;
   flex-direction: row;
-  padding-top: 25px;
+  padding-top: 50px;
 }
 
 div.post {
