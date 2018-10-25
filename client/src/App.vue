@@ -2,14 +2,14 @@
 
 <template>
   <div id="app">
-    <router-view/>
+    
+
+    <!-- When I add the router-view, all the webpage content disappears.
+     <router-view/> 
+    -->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <img alt="Vue logo" src="./assets/logo.png">
-    
-    <!--Added this line-->
-    
-
     <a class="navbar-brand" href="#">Zentality</a>    
   
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,17 +18,18 @@
 
     <div class="collapse navbar-collapse" id="navbarColor02">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+        <li class="nav-item">
+          <a class="nav-link" href="#/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Journal</a>
+          <a class="nav-link" href="#/analytics">Analytics</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Resources</a>
+          <a class="nav-link" href="#/resources">Resources</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
+          <a class="nav-link" href="#/aboutus">About Us</a>
+          <router-link to="/aboutus">About Us</router-link>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
