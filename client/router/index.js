@@ -1,16 +1,16 @@
 //Added this entire file!
 import Vue from 'vue'
 import Router from 'vue-router'
-import PostComponent from '@/components/PostComponent'
+import App from './App.vue'
 
-Vue.user(Router)
+Vue.use(Router)
 
 export default new Router ({
     routes: [
         {
             path: '/',
-            name: 'PostComponent',
-            component: PostComponent
+            name: 'App',
+            component: App
         }
     ]
 })

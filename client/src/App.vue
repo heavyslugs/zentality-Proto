@@ -1,12 +1,14 @@
+<!--This might just become our site template for everything-->
+
 <template>
   <div id="app">
-    
+    <router-view/>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <img alt="Vue logo" src="./assets/logo.png">
     
     <!--Added this line-->
-    <router-view/>
+    
 
     <a class="navbar-brand" href="#">Zentality</a>    
   
@@ -26,7 +28,7 @@
           <a class="nav-link" href="#">Resources</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="C:\Users\Claire\Documents\18FS\IT5001\zentality-Proto\client\src\AboutUs.vue">About Us</a>
+          <a class="nav-link" href="#">About Us</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -58,16 +60,3 @@ export default {
   }
 };
 </script>
-
-
-<!-- <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
--->
