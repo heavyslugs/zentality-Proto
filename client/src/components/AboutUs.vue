@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#/home">Home</a>
+            <a class="nav-link" href="#/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#/analytics">Analytics</a>
@@ -21,7 +21,7 @@
             <a class="nav-link" href="#/resources">Resources</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#/aboutus">About Us</a>
+            <a class="nav-link" href="#/aboutus">About Us<span class="sr-only">(current)</span></a>
           </li>
         </ul>
       </div>
@@ -33,11 +33,31 @@
       -->
     </nav>    
     
+    <div class="container marketing">
 
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded" src="@/assets/claire.jpg" alt="Generic placeholder image" height="250">
+            <h2 class="member-name">Claire James</h2>
+            <p>Claire is the team manager and a full-stack developer for Zentality. She is a 5th-year at the University of Cincinnati, and plans to work for GE Aviation upon graduation.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2 class="member-name">Patrick Khuu</h2>
+            <p>Patrick is the business analyst and a full-stack developer for Zentality. He is a 5th-year at the University of Cincinnati in the IT Accelerated Master of Business Administration Program and plans to work for PCMS upon graduation.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <h2 class="member-name">Kris Perkins</h2>
+            <p>Kris Perkins is the infrastructure analyst and AWS Director for Zentality. He is a 5th-year at the Univesity of Cincinntai and plans on working at ____ upon graduation.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
 
-    <p>Claire James - Team Manager and Front-end Developer</p><br>
-    <p>Patrick Khuu - Business Analyst and Back-end Developer</p>
-    <p>Kris Perkins - Infrastructure Analyst</p>
+      </div>
     
   </div>
 </template>
@@ -61,17 +81,14 @@ export default {
 
 
 <style>
-/* #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
 
 .container.marketing {
   padding-top: 1.5em;
 
+}
+
+.member-name{
+  padding-top: 0.25em;
+  padding-bottom: 0.25em
 }
 </style>
