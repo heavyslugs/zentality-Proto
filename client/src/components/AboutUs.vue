@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <img alt="Vue logo" src="@/assets/logo.png">
+      <img alt="Vue logo" src="@/assets/logo.png" height="100px">
       <a class="navbar-brand" href="#">Zentality</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -44,13 +44,13 @@
             <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="250">
             <h2 class="member-name">Patrick Khuu</h2>
             <p>Patrick is the business analyst and a full-stack developer for Zentality. He is a 5th-year at the University of Cincinnati in the IT Accelerated Master of Business Administration Program and plans to work for PCMS upon graduation.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
+            <img class="rounded" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="250">
             <h2 class="member-name">Kris Perkins</h2>
             <p>Kris Perkins is the infrastructure analyst and AWS Director for Zentality. He is a 5th-year at the Univesity of Cincinntai and plans on working at ____ upon graduation.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
