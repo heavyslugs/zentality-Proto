@@ -1,28 +1,19 @@
+<!--This might just become our site template for everything-->
+
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <PostComponent />
+    <div id="app">
+    <router-view/>
+
+    <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+
   </div>
 </template>
 
 <script>
-import PostComponent from './components/PostComponent.vue';
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    PostComponent
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
