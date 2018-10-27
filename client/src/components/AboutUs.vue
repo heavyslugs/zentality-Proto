@@ -52,7 +52,7 @@
           <div class="col-lg-4">
             <img class="rounded" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" height="250">
             <h2 class="member-name">Kris Perkins</h2>
-            <p>Kris Perkins is the infrastructure analyst and AWS Director for Zentality. He is a 5th-year at the Univesity of Cincinntai and plans on working at ____ upon graduation.</p>
+            <p>Kris Perkins is the infrastructure analyst and AWS Director for Zentality. He is a 5th-year at the Univesity of Cincinntai and plans on working at Cincinnati Insurance Company upon graduation.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
