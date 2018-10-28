@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#/home">Home</a>
+            <a class="nav-link" href="#/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#/analytics">Analytics</a>
@@ -53,6 +53,43 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+div.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+p.error {
+  border: 1px solid #ff5b5f;
+  background-color: #ffc5c1;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+div.post {
+  position: relative;
+  border: 1px solid #5bd658;
+  background-color: #bcffb8;
+  padding: 10px 10px 30px 10px;
+  margin-bottom: 15px;
+}
+
+div.created-at {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 15px 5px 15px;
+  background-color: darkgreen;
+  color: white;
+  font-size: 13px;
+}
+
+p.text {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+</style>
+
 
 </style>
