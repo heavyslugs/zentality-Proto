@@ -25,6 +25,8 @@
   </table>
 </template>
 
+<script type="text/javascript" src="node_modules/auth0-js/build/auth0.js"></script>
+
 <script>
 import PostService from '../PostService';
 
