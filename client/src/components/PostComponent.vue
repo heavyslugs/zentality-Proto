@@ -1,8 +1,8 @@
 <template>
-  <table class="journal">
+  <table class="home-page">
     <tr class="container">
       <!-- CREATE POST HERE -->
-      <td class="left">
+      <td class="journal">
         <div class="create-post">
           <!-- label for="create-post">Say Something... </label> -->
           <textarea type="text" id="create-post" cols="94" rows="5" v-model="text" placeholder="Create a post"></textarea>
@@ -26,32 +26,37 @@
       <td class="mood-bar">
         <div>
           <tr>
-            How are you feeling today?
+            <h2>How are you feeling today?</h2>
           </tr>
-          <tr>
-            <td>
-              <input type="button" id="chkOne" name="experience"/>
-              <p>1 - Very Poor</p>
+          <hr />
+          <tr class="mood-bar-buttons">
+            <td class="button">
+              <button type="very-poor" class="btn-default-1">
+                <font-awesome-icon icon="sad-tear" size="3x"/>
+              </button>
             </td>
-            <td>
-              <input type="button" id="chkTwo" name="experience"/>
-              <p>2 - Poor</p>
+            <td class="button-two">
+              <button type="poor" class="btn-default-2">
+                <font-awesome-icon icon="frown" size="3x"/>
+              </button>
             </td>
-            <td>
-              <input type="button" id="chkTwo" name="experience"/>
-              <p>3 - Neutral</p>
+            <td class="button-three">
+              <button type="neutral" class="btn-default-3">
+                <font-awesome-icon icon="meh" size="3x"/>
+              </button>
             </td>
-            <td>
-              <input type="button" id="chkTwo" name="experience"/>
-              <p>4 - Good</p>
+            <td class="button-four">
+              <button type="good" class="btn-default-4">
+                <font-awesome-icon icon="smile" size="3x"/>
+              </button>
             </td>
-            <td>
-              <input type="button" id="chkFive" name="experience"/>
-              <p>5 - Very Good</p>
+            <td class="button-five">
+              <button type="very-good" class="btn-default-5">
+                <font-awesome-icon icon="smile-beam" size="3x"/>
+              </button>
             </td>
           </tr>
         </div>
-        <hr>
       </td>
     </tr>
   </table>
@@ -136,6 +141,55 @@ p.text {
 td.mood-bar {
   position: relative;
   padding-bottom: 900px;
-  padding-left: 100px;
+  padding-left: 200px;
+}
+
+td.button-five {
+  padding-right: 450px;
+}
+
+button.btn-default-1 {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ff5b5f;
+  background-color: #ffc5c1;
+  padding: 15px;
+  margin: 15px;
+}
+
+button.btn-default-2 {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ff9d5b;
+  background-color: #ffc895;
+  padding: 15px;
+  margin: 15px;
+}
+
+button.btn-default-3 {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ffef5b;
+  background-color: #fffd95;
+  padding: 15px;
+  margin: 15px;
+}
+
+button.btn-default-4 {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #7cff5b;
+  background-color: #d6ff95;
+  padding: 15px;
+  margin: 15px;
+}
+
+button.btn-default-5 {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #5bd658;
+  background-color: #bcffb8;
+  padding: 15px;
+  margin: 15px;
 }
 </style>
