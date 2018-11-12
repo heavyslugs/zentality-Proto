@@ -1,28 +1,59 @@
 <template>
-  <table>
-    <div class = "container">
+  <table class="journal">
+    <tr class="container">
       <!-- CREATE POST HERE -->
-      <div class="create-post">
-        <!-- label for="create-post">Say Something... </label> -->
-        <textarea type="text" id="create-post" cols="50" rows="5" v-model="text" placeholder="Create a post"></textarea>
-        <button v-on:click="createPost">Post</button>
-      </div>
-      <hr>
-      <h1>Latest Posts</h1>
-      <p class="error" v-if="error">{{ error }}</p>
-      <div class="post-container">
-        <div class="post"
-          v-for="(post, index) in posts"
-          v-bind:item="post"
-          v-bind:index="index"
-          v-bind:key="post._id"
-          v-on:dblclick="deletePost(post._id)"
-        >
-          {{ `${post.createdAt.getMonth()}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
-          <p class="text">{{ post.text }}</p>
+      <td class="left">
+        <div class="create-post">
+          <!-- label for="create-post">Say Something... </label> -->
+          <textarea type="text" id="create-post" cols="94" rows="5" v-model="text" placeholder="Create a post"></textarea>
+          <button v-on:click="createPost">Post</button>
         </div>
-      </div>
-    </div>
+        <hr>
+        <h1>Latest Posts</h1>
+        <p class="error" v-if="error">{{ error }}</p>
+        <div class="post-container">
+          <div class="post"
+            v-for="(post, index) in posts"
+            v-bind:item="post"
+            v-bind:index="index"
+            v-bind:key="post._id"
+          >
+            {{ `${post.createdAt.getMonth()}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
+            <p class="text">{{ post.text }}</p>
+          </div>
+        </div>
+      </td>
+      <td class="mood-bar">
+        <div>
+          <tr>
+            How are you feeling today?
+          </tr>
+          <tr>
+            <td>
+              <input type="button" id="chkOne" name="experience"/>
+              <p>1 - Very Poor</p>
+            </td>
+            <td>
+              <input type="button" id="chkTwo" name="experience"/>
+              <p>2 - Poor</p>
+            </td>
+            <td>
+              <input type="button" id="chkTwo" name="experience"/>
+              <p>3 - Neutral</p>
+            </td>
+            <td>
+              <input type="button" id="chkTwo" name="experience"/>
+              <p>4 - Good</p>
+            </td>
+            <td>
+              <input type="button" id="chkFive" name="experience"/>
+              <p>5 - Very Good</p>
+            </td>
+          </tr>
+        </div>
+        <hr>
+      </td>
+    </tr>
   </table>
 </template>
 
@@ -60,7 +91,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div.container {
+tr.container {
   max-width: 800px;
   margin: 0 auto;
 }
@@ -71,6 +102,11 @@ p.error {
   padding: 10px;
   margin-bottom: 15px;
 }
+div.create-post {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+}
 
 div.post {
   position: relative;
@@ -78,6 +114,7 @@ div.post {
   background-color: #bcffb8;
   padding: 10px 10px 30px 10px;
   margin-bottom: 15px;
+  max-width: 750px;
 }
 
 div.created-at {
@@ -94,5 +131,11 @@ p.text {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 0;
+}
+
+td.mood-bar {
+  position: relative;
+  padding-bottom: 900px;
+  padding-left: 100px;
 }
 </style>
