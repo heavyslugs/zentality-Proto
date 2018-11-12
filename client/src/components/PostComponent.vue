@@ -156,9 +156,30 @@ button.btn-default-1 {
   float: left;
   border-radius: 60%;
   border: 1px solid #ff5b5f;
-  background-color: #ffc5c1;
+  background-color: #ffbdb8;
   padding: 15px;
   margin: 15px;
+  outline: 0;
+}
+
+button.btn-default-1:hover {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ff5b5f;
+  background-color: #fccbc7;
+  padding: 15px;
+  margin: 15px;
+}
+
+button.btn-default-1:active {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ff5b5f;
+  background-color: #ff968f;
+  padding: 15px;
+  margin: 15px;
+  transform: translateY(4px);
+  outline: 0;
 }
 
 button.btn-default-2 {
@@ -168,6 +189,27 @@ button.btn-default-2 {
   background-color: #ffc895;
   padding: 15px;
   margin: 15px;
+  outline: 0;
+}
+
+button.btn-default-2:hover {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ff9d5b;
+  background-color: #f8c99d;
+  padding: 15px;
+  margin: 15px;
+}
+
+button.btn-default-2:active {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ff9d5b;
+  background-color: #faaf68;
+  padding: 15px;
+  margin: 15px;
+  transform: translateY(4px);
+  outline: 0;
 }
 
 button.btn-default-3 {
@@ -177,23 +219,87 @@ button.btn-default-3 {
   background-color: #fffd95;
   padding: 15px;
   margin: 15px;
+  outline: 0;
+}
+
+button.btn-default-3:hover {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ffef5b;
+  background-color: #f7f5a0;
+  padding: 15px;
+  margin: 15px;
+}
+
+button.btn-default-3:active {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #ffef5b;
+  background-color: #fffd6b;
+  padding: 15px;
+  margin: 15px;
+  transform: translateY(4px);
+  outline: 0;
 }
 
 button.btn-default-4 {
   float: left;
   border-radius: 60%;
   border: 1px solid #7cff5b;
-  background-color: #d6ff95;
+  background-color: #d0fd87;
   padding: 15px;
   margin: 15px;
+  outline: 0;
+}
+
+button.btn-default-4:hover {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #7cff5b;
+  background-color: #d8fd9c;
+  padding: 15px;
+  margin: 15px;
+}
+
+button.btn-default-4:active {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #7cff5b;
+  background-color: #afdb68;
+  padding: 15px;
+  margin: 15px;
+  transform: translateY(4px);
+  outline: 0;
 }
 
 button.btn-default-5 {
   float: left;
   border-radius: 60%;
   border: 1px solid #5bd658;
+  background-color: #a2ff9e;
+  padding: 15px;
+  margin: 15px;
+  outline: 0;
+}
+
+button.btn-default-5:hover {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #5bd658;
   background-color: #bcffb8;
   padding: 15px;
   margin: 15px;
+
+}
+
+button.btn-default-5:active {
+  float: left;
+  border-radius: 60%;
+  border: 1px solid #5bd658;
+  background-color: #90ff8a;
+  padding: 15px;
+  margin: 15px;
+  transform: translateY(4px);
+  outline: 0;
 }
 </style>
