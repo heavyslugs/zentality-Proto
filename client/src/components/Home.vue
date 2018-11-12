@@ -91,5 +91,3 @@ p.text {
 }
 </style>
 
-
-</style>
