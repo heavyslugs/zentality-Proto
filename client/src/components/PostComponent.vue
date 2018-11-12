@@ -138,6 +138,10 @@ p.text {
   margin-bottom: 0;
 }
 
+td.journal {
+  padding-left: 8rem;
+}
+
 td.mood-bar {
   position: relative;
   padding-bottom: 900px;
