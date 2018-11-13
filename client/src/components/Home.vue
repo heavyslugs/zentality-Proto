@@ -1,7 +1,7 @@
 <template>
     <div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <img alt="Vue logo" src="@/assets/logo.png">
+      <img alt="Vue logo" src="@/assets/logo.png" height="100px">
       <a class="navbar-brand" href="#">Zentality</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,7 +10,7 @@
       <div class="collapse navbar-collapse" id="navbarColor02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#/home">Home</a>
+            <a class="nav-link" href="#/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#/analytics">Analytics</a>
@@ -30,8 +30,7 @@
       </form>
       -->
     </nav>
-        <h1>Home</h1>
-            <component v-bind:is="component"> </component>        
+      <component v-bind:is="component"> </component>        
     </div>
 
 </template>
