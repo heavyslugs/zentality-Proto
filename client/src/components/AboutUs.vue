@@ -42,7 +42,9 @@
     </div>
 
     <div class="container aboutus">
-
+      <h1>About Us</h1>
+      <p class="lead">The team at Zentality is devoted to empowering students to be in charge of their own mental healths. Each member of the team suffers from their own mental health issues and wants to end the stigma associated with it.</p>
+        <br/>
         <div class="row">
           <div class="col-lg-4">
             <img class="rounded" src="@/assets/claire.jpg" alt="Claire James" height="250">
