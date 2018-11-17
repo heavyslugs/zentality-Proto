@@ -31,27 +31,27 @@
           <hr />
           <tr class="mood-bar-buttons">
             <td class="button">
-              <button id="button" type="very-poor" class="btn-default-1"  value="1" v-on:click="createPostForButtonInput">
+              <button id="button" type="very-poor" class="btn-default-1"  value="1" v-on:click="createPostForButtonInput()">
                 <font-awesome-icon icon="sad-tear" size="3x"/>
               </button>
             </td>
             <td class="button-two">
-              <button id="button" type="poor" class="btn-default-2" value="2" v-on:click="createPostForButtonInput">
+              <button id="button" type="poor" class="btn-default-2" value="2" v-on:click="createPostForButtonInput()">
                 <font-awesome-icon icon="frown" size="3x"/>
               </button>
             </td>
             <td class="button-three">
-              <button id="button" type="neutral" class="btn-default-3" value="3" v-on:click="createPostForButtonInput">
+              <button id="button" type="neutral" class="btn-default-3" value="3" v-on:click="createPostForButtonInput()">
                 <font-awesome-icon icon="meh" size="3x"/>
               </button>
             </td>
             <td class="button-four">
-              <button id="button" type="good" class="btn-default-4" value="4" v-on:click="createPostForButtonInput">
+              <button id="button" type="good" class="btn-default-4" value="4" v-on:click="createPostForButtonInput()">
                 <font-awesome-icon icon="smile" size="3x"/>
               </button>
             </td>
             <td class="button-five">
-              <button id="button" type="very-good" class="btn-default-5" value="5" v-on:click="createPostForButtonInput">
+              <button id="button" type="very-good" class="btn-default-5" value="5" v-on:click="createPostForButtonInput()">
                 <font-awesome-icon icon="smile-beam" size="3x"/>
               </button>
             </td>
@@ -67,7 +67,9 @@ import PostService from '../PostService';
 import PostMoodService from '../PostMoodService';
 
 function getWhichButtonWasSelected() {
-    document.getElementById("button").value = "newButtonValue";
+  var buttonElement = document.getElementById("button");
+  var buttonValue = buttonElement.getAttribute("value");
+  return buttonValue;
 }
 
 export default {
@@ -90,6 +92,8 @@ export default {
     async createPost() {
       await PostService.insertPost(this.text);
       this.posts = await PostService.getPosts();
+      this.text = "";
+      
     },
     async createPostForButtonInput() {
       await PostMoodService.insertButtonInput(getWhichButtonWasSelected());
