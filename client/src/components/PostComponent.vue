@@ -90,6 +90,7 @@ export default {
     async createPost() {
       await PostService.insertPost(this.text);
       this.posts = await PostService.getPosts();
+      this.text = "";
     },
     async createPostForButtonInput() {
       await PostMoodService.insertButtonInput(getWhichButtonWasSelected());
