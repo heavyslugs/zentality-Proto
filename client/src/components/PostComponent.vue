@@ -93,10 +93,7 @@ export default {
       await PostService.insertPost(this.text);
       this.posts = await PostService.getPosts();
       this.text = "";
-<<<<<<< HEAD
       
-=======
->>>>>>> feature/3139_v2
     },
     async createPostForButtonInput() {
       await PostMoodService.insertButtonInput(getWhichButtonWasSelected());
