@@ -22,11 +22,6 @@
             <a class="nav-link" href="#/aboutus">About Us</a>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right"
-          <ul class="nav-item">
-            <button class="btn btn-danger" onclick="location.href='https://zentality.auth0.com/login?client=RWu8NOKrqDkdB2hGp5E7BzeoFiTY65Ft'" style="flex: 1">Log Out</button>
-          </ul>
-        </ul>
       </div>
       <!-- Hiding Search Bar for now
       <form class="form-inline my-2 my-lg-0">
@@ -56,7 +51,6 @@ export default {
     };
   }
 };
-
 </script>
 
 <style scoped>

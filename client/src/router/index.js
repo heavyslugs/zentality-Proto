@@ -35,10 +35,6 @@ export default new Router ({
             path: '/aboutus',
             name: 'About Us',
             component: AboutUs
-        },
-        {
-            path: 'https://zentality.auth0.com/login?client=RWu8NOKrqDkdB2hGp5E7BzeoFiTY65Ft',
-            name: 'Log Out'
         }
     ]
 })
