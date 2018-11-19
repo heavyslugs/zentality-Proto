@@ -47,18 +47,63 @@
         </div>
 
         <div class="card border-danger mb-3" style="max-width: 50rem;">
-            <div class="card-header">University of Cincinnati</div>
+            <div class="card-header">Counseling & Psychological Services</div>
             <div class="card-body">
-                <h4 class="card-title">Primary card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">One-on-One Services</h5>
+                <p class="card-text">Many students use individual therapy to address personal concerns. Students typically seek services for help with adjusting to new situations, managing stress, difficulties in relationships, anxiety, depression, anger, grief, family problems and personal identity. <strong>Call 513-556-0648 between 8a-5pm to schedule an appointment</strong>.</p>
+            </div>
+        </div>
+
+        <div class="card border-danger mb-3" style="max-width: 50rem;">
+            <div class="card-header">Counseling & Psychological Services</div>
+            <div class="card-body">
+                <h5 class="card-title">Let's Talk!</h5>
+                <p class="card-text">Let's Talk! is a free, confidential program which allows UC students to have brief 15-20 minute sessions with clinicians from CAPS. This service is available for all UC students who may not need traditional counseling, but could still benefit from one-on-one support. Walk-ins are available at the following times and locations:</p>
+                <table class="table table-hover">
+                    <tr class="table-danger">
+                        <th scope="col">Location</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">College of Law Room 208</th>
+                        <th scope="col">Mondays @ 12:00 - 2:00pm</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">DAAP Library 6480A Aronoff</th>
+                        <th scope="col">Tuesdays @ 11:30am - 1:30pm</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Engineering and Research Center (CEAS) 535</th>
+                        <th scope="col">Tuesdays @ 2:30 - 4:30pm</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">LGBTQ Center, 565 Steger</th>
+                        <th scope="col">Wednesdays @ 1:00 - 3:00pm</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">Women's Center 571 Steger Student Life Center</th>
+                        <th scope="col">Thursdays @ 10:00am - 12:00pm</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">MSBE501 (Student Wellness Room E501)</th>
+                        <th scope="col">Thursdays @ 1:30 - 3:30pm</th>
+                    </tr>                    
+                    <tr>
+                        <th scope="col">CCM 4230 MEH (3217)</th>
+                        <th scope="col">Thursdays @ 2:00 - 4:00pm</th>
+                    </tr>
+
+                </table>
             </div>
         </div>      
 
+        <h4>External resources:</h4>
         <div class="card border-success mb-3" style="max-width: 50rem;">
-            <div class="card-header">University of Cincinnati</div>
+            <div class="card-header">TAO: Therapy Assistance Online</div>
             <div class="card-body">
-                <h4 class="card-title">Primary card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">What is TAO?</h5>
+                <p class="card-text">TAO is a cross-platform, online library full of interactive programs designed to teach life skills and to help you learn resilience to tackle life's hurdles.</p>
+                <a href="https://thepath.taoconnect.org/local/self_help/signup.php" target="_blank" class="card-link">Sign up here</a>
             </div>
         </div>        
     </div>
