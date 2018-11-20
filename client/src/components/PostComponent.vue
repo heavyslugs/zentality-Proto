@@ -18,7 +18,7 @@
             v-bind:index="index"
             v-bind:key="post._id"
           >
-            {{ `${post.createdAt.getMonth()}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
+            {{ `${post.createdAt.getMonth()+1}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
             <p class="text">{{ post.text }}</p>
           </div>
         </div>
