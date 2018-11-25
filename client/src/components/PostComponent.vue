@@ -1,65 +1,80 @@
 <template>
-  <table class="home-page">
-    <tr class="container">
-      <!-- CREATE POST HERE -->
-      <td class="journal">
-        <div class="create-post">
-          <!-- label for="create-post">Say Something... </label> -->
-          <textarea type="text" id="create-post" cols="94" rows="5" v-model="text" placeholder="Create a post"></textarea>
-          <button v-on:click="createPost">Post</button>
+
+  <div class="container-fluid" style="padding-left:100px; padding-right:50px;">
+
+    <div class="row">
+        <div class="col-lg-5">
+            <td class="journal">
+
+<modal v-if="showModal"></modal>
+<button type="button" class="btn btn-primary" @click="showModal = true">Create a Journal Entry</button>
+
+
+             <!-- <div class="b-col">
+                <textarea type="text" id="create-post" cols="94" rows="5" v-model="text" placeholder="Create a post"></textarea>
+                <button v-on:click="createPost">Post</button>
+              </div>-->
+              <hr>
+              <h1>Latest Posts</h1>
+              <p class="error" v-if="error">{{ error }}</p>
+                <div class="post-container">
+                  <div class="post"
+                    v-for="(post, index) in posts"
+                    v-bind:item="post"
+                    v-bind:index="index"
+                    v-bind:key="post._id"
+                   >
+                  {{ `${post.createdAt.getMonth()+1}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
+                  <p class="text">{{ post.text }}</p>
+                  </div>
+                </div>
+            </td>
         </div>
-        <hr>
-        <h1>Latest Posts</h1>
-        <p class="error" v-if="error">{{ error }}</p>
-        <div class="post-container">
-          <div class="post"
-            v-for="(post, index) in posts"
-            v-bind:item="post"
-            v-bind:index="index"
-            v-bind:key="post._id"
-          >
-            {{ `${post.createdAt.getMonth()+1}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
-            <p class="text">{{ post.text }}</p>
-          </div>
+
+        <div class="col-sm-1"> 
         </div>
-      </td>
-      <td class="mood-bar">
-        <div>
-          <tr>
-            <h2>How are you feeling today?</h2>
-          </tr>
-          <hr />
-          <tr class="mood-bar-buttons">
-            <td class="button">
-              <button id="button" type="very-poor" class="btn-default-1"  value="1" v-on:click="createPostForButtonInput()">
-                <font-awesome-icon icon="sad-tear" size="3x"/>
-              </button>
-            </td>
-            <td class="button-two">
-              <button id="button" type="poor" class="btn-default-2" value="2" v-on:click="createPostForButtonInput()">
-                <font-awesome-icon icon="frown" size="3x"/>
-              </button>
-            </td>
-            <td class="button-three">
-              <button id="button" type="neutral" class="btn-default-3" value="3" v-on:click="createPostForButtonInput()">
-                <font-awesome-icon icon="meh" size="3x"/>
-              </button>
-            </td>
-            <td class="button-four">
-              <button id="button" type="good" class="btn-default-4" value="4" v-on:click="createPostForButtonInput()">
-                <font-awesome-icon icon="smile" size="3x"/>
-              </button>
-            </td>
-            <td class="button-five">
-              <button id="button" type="very-good" class="btn-default-5" value="5" v-on:click="createPostForButtonInput()">
-                <font-awesome-icon icon="smile-beam" size="3x"/>
-              </button>
-            </td>
-          </tr>
+
+        <div class="col-lg-5" style="padding-top:25px">
+          <td class="b-col">
+            <div>
+              <tr>
+                <h2 class="question">How are you feeling today?</h2>
+              </tr>
+              <hr />
+              <tr class="mood-bar-buttons">
+                <td class="button">
+                  <button id="button" class="btn-default-1" value="1" v-on:click="createPostForButtonInput()">
+                  <font-awesome-icon icon="sad-tear" size="3x"/>
+                  </button>
+                </td>
+                <td class="button-two">
+                  <button id="button" class="btn-default-2" value="2" v-on:click="createPostForButtonInput()">
+                  <font-awesome-icon icon="frown" size="3x"/>
+                  </button>
+                </td>
+                <td class="button-three">
+                  <button id="button" class="btn-default-3" value="3" v-on:click="createPostForButtonInput()">
+                  <font-awesome-icon icon="meh" size="3x"/>
+                  </button>
+                </td>
+                <td class="button-four">
+                  <button id="button" class="btn-default-4" value="4" v-on:click="createPostForButtonInput()">
+                  <font-awesome-icon icon="smile" size="3x"/>
+                  </button>
+                </td>
+                <td class="button-five">
+                  <button id="button" class="btn-default-5" value="5" v-on:click="createPostForButtonInput()">
+                  <font-awesome-icon icon="smile-beam" size="3x"/>
+                  </button>
+                </td>
+              </tr>
+            </div>
+          </td>
         </div>
-      </td>
-    </tr>
-  </table>
+    </div>
+
+  </div>
+
 </template>
 
 <script>
@@ -67,10 +82,15 @@ import PostService from '../PostService';
 import PostMoodService from '../PostMoodService';
 
 function getWhichButtonWasSelected() {
+  var x = document.getElementById("button").value;
+  return x;
+}
+
+/*function getWhichButtonWasSelected() {
   var buttonElement = document.getElementById("button");
   var buttonValue = buttonElement.getAttribute("value");
   return buttonValue;
-}
+}*/
 
 export default {
   name: 'PostComponent',
@@ -101,16 +121,36 @@ export default {
     async deletePost(id) {
       await PostService.deletePost(id);
       this.posts = await PostService.getPosts();
+    },
+    showModal() {
+      this.$refs.modalRef.show()
+    },
+    hideModal() {
+      this.$refs.modalRef.hide()
     }
   }
 }
 </script>
 
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-tr.container {
-  max-width: 800px;
-  margin: 0 auto;
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 p.error {
@@ -119,6 +159,7 @@ p.error {
   padding: 10px;
   margin-bottom: 15px;
 }
+
 div.create-post {
   display: flex;
   flex-direction: row;
@@ -149,9 +190,9 @@ p.text {
   margin-bottom: 0;
 }
 
-/*td.journal {
-  padding-left: 8rem;
-}*/
+td.journal {
+  padding-top: 2rem;
+}
 
 td.mood-bar {
   display: flex;
