@@ -4,11 +4,11 @@
 
     <td class="journal">
 
-    <modal v-if="showModal"></modal>
+    <modal v-if="showModal" ref="modalRef"></modal>
     <button type="button" class="btn btn-primary" @click="showModal = true">Create a Journal Entry</button>
 
     <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
-      <div class="modal-content" ref="modalRef">
+      <div class="modal-content">
         <!--Header-->
         <div class="modal-header">
           <p class="heading lead">Journal Entry
@@ -65,7 +65,7 @@
 
         <!--Footer-->
         <div class="modal-footer justify-content-center">
-          <a type="button" v-on:click="createPost" class="btn btn-primary waves-effect waves-light">Send
+          <a type="button" v-on:click="createPost" @click="hideModal" class="btn btn-primary waves-effect waves-light">Post
             <i class="fa fa-paper-plane ml-1"></i>
           </a>
           <a type="button" class="btn btn-outline-primary waves-effect" @click="hideModal">Cancel</a>
