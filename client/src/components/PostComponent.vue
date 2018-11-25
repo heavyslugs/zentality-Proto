@@ -72,20 +72,21 @@
         </div>
       </div>
     </div>
-      <hr>
-      <h1>Latest Posts</h1>
-      <p class="error" v-if="error">{{ error }}</p>
-        <div class="post-container">
-          <div class="post"
-            v-for="(post, index) in posts"
-            v-bind:item="post"
-            v-bind:index="index"
-            v-bind:key="post._id"
-            >
-          {{ `${post.createdAt.getMonth()+1}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
-          <p class="text">{{ post.text }}</p>
-          </div>
+
+    <hr>
+    <h1>Latest Journal Entries</h1>
+    <p class="error" v-if="error">{{ error }}</p>
+      <div class="post-container">
+        <div class="post"
+          v-for="(post, index) in posts"
+          v-bind:item="post"
+          v-bind:index="index"
+          v-bind:key="post._id"
+          >
+        {{ `${post.createdAt.getMonth()+1}/${post.createdAt.getDate()}/${post.createdAt.getFullYear()}` }}
+        <p class="text">{{ post.text }}</p>
         </div>
+      </div>
     </td>
 
   </div>
@@ -149,9 +150,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div.post {
-  align-content: center;
-}
 
 p.error {
   border: 1px solid #ff5b5f;
