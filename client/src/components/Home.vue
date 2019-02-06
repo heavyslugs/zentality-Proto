@@ -66,9 +66,9 @@ export default {
   methods: {
     async findUser() {
       try {
-        const user = await Auth.currentAuthenticatedUser();
+        //const user = await Auth.currentAuthenticatedUser();
         this.signedIn = true;
-        console.log(user);
+        //console.log(user);
 
       }
       catch(err) {
