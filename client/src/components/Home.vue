@@ -23,9 +23,6 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <div v-if="!signedIn">
-            <amplify-sign-in></amplify-sign-in>
-          </div>
           <div v-if="signedIn">
             <amplify-sign-out></amplify-sign-out>
           </div>
@@ -38,7 +35,12 @@
       </form>
       -->
     </nav>
-    <component v-bind:is="component"> </component>     
+    <div v-if="!signedIn">
+      <amplify-authenticator></amplify-authenticator>
+    </div>
+    <div v-if="signedIn">
+      <component v-bind:is="component"> </component>
+    </div>    
     </div>
 
 </template>
@@ -59,20 +61,31 @@ export default {
       if(info === "signedIn") {
         this.findUser();
       } else {
+        //this.$store.state.signedIn = false;
         this.signedIn = false;
+        //this.$store.state.user = null;
       }
     });
   },
+  //computed: {
+  //  signedIn() {
+  //    return this.$store.state.signedIn; 
+  //  }
+  //},
   methods: {
     async findUser() {
       try {
-        //const user = await Auth.currentAuthenticatedUser();
+        const user = await Auth.currentAuthenticatedUser();
         this.signedIn = true;
+        //this.$store.state.signedIn = true;
+        //this.$store.state.user = user;
         //console.log(user);
 
       }
       catch(err) {
-        this.signedIn = false;  
+        //this.$store.state.signedIn = false;
+        //this.$store.state.user = null;
+        this.signedIn = false;
       }
 
     }
