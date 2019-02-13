@@ -7,60 +7,48 @@
       <div class="row">
 
         <div class="col-lg-5">
-          <modal v-if="showModal" ref="modalRef"></modal>
-          <button type="button" class="btn btn-primary" @click="showModal = true">Create a Journal Entry</button>
-
-          <div class="modal-dialog modal-full-height modal-right modal-notify modal-info" role="document">
+          <div class="modal-dialog modal-lg modal-right modal-notify modal-info" role="document">
             <div class="modal-content">
               <!--Header-->
               <div class="modal-header">
-                <p class="heading lead">Journal Entry
-                </p>
-
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true" class="white-text">×</span>
-                </button>
+                <p class="heading lead">Journal Entry</p>
               </div>
 
               <div class="col-lg-5" style="padding-top:25px">
-                <tr>
+                 <tr>
                   <h5>How are you feeling today?</h5>
-                  <div>
+                    <div>
                     <tr class="mood-bar-buttons">
                       <td class="button">
-                        <button id="button" class="btn-default-1" value="1" v-on:click="createPostForButtonInput()">
-                          <font-awesome-icon icon="sad-tear" size="2x"/>
-                        </button>
+                        <input type="radio" class="buttonVerySad" :name="buttonVerySad" v-model="button1" v-on:click="createPostForButtonInputVerySad">
+                        <font-awesome-icon icon="sad-tear" size="3x" :style="{ color: '#ff968f'}"/>
                       </td>
                       <td class="button-two">
-                        <button id="button" class="btn-default-2" value="2" v-on:click="createPostForButtonInput()">
-                          <font-awesome-icon icon="frown" size="2x"/>
-                        </button>
+                        <input type="radio" class="buttonSad" :name="buttonSad" v-model="button2" v-on:click="createPostForButtonInputSad">
+                        <font-awesome-icon icon="frown" size="3x" :style="{ color: '#faaf68'}"/>
                       </td>
                       <td class="button-three">
-                        <button id="button" class="btn-default-3" value="3" v-on:click="createPostForButtonInput()">
-                          <font-awesome-icon icon="meh" size="2x"/>
-                        </button>
+                        <input type="radio" class="buttonNeutral" :name="buttonNeutral" v-model="button3" v-on:click="createPostForButtonInputNeutral">
+                        <font-awesome-icon icon="meh" size="3x" :style="{ color: '#fffd6b'}"/>
                       </td>
                       <td class="button-four">
-                        <button id="button" class="btn-default-4" value="4" v-on:click="createPostForButtonInput()">
-                          <font-awesome-icon icon="smile" size="2x"/>
-                        </button>
+                        <input type="radio" class="buttonHappy" :name="buttonHappy" v-model="button4" v-on:click="createPostForButtonInputHappy">
+                        <font-awesome-icon icon="smile" size="3x" :style="{ color: '#afdb68'}"/>
                       </td>
                       <td class="button-five">
-                        <button id="button" class="btn-default-5" value="5" v-on:click="createPostForButtonInput()">
-                          <font-awesome-icon icon="smile-beam" size="2x"/>
-                        </button>
-                      </td>
+                        <input type="radio" class="buttonVeryHappy" :name="buttonVeryHappy" v-model="button5" v-on:click="createPostForButtonInputVeryHappy">
+                        <font-awesome-icon icon="smile-beam" size="3x" :style="{ color: '#90ff8a'}"/>
+                      </td>                                                                                  
                     </tr>
-                  </div>
-                </tr>
+                    </div>
+                 </tr>
               </div>
 
               <!--Body-->
               <div class="modal-body">
                 <!--Basic textarea-->
                 <div class="md-form">
+                  <h5>Create Your Journal Entry Here</h5>
                   <textarea type="text" id="create-post" class="md-textarea form-control" v-model="text" placeholder="Create a post" rows="5"></textarea>
                 </div>
 
@@ -68,10 +56,7 @@
 
               <!--Footer-->
               <div class="modal-footer justify-content-center">
-                <a type="button" v-on:click="createPost" @click="hideModal" class="btn btn-primary waves-effect waves-light">Post
-                  <i class="fa fa-paper-plane ml-1"></i>
-                </a>
-                <a type="button" class="btn btn-outline-primary waves-effect" @click="hideModal">Cancel</a>
+                <a type="button" v-on:click="createPost" class="btn btn-primary waves-effect waves-light">Post</a>
               </div>
             </div>
           </div>
@@ -105,24 +90,18 @@
 import PostService from "../PostService";
 import PostMoodService from "../PostMoodService";
 
-function getWhichButtonWasSelected() {
-  var x = document.getElementById("button").value;
-  return x;
-}
-
-/*function getWhichButtonWasSelected() {
-  var buttonElement = document.getElementById("button");
-  var buttonValue = buttonElement.getAttribute("value");
-  return buttonValue;
-}*/
-
 export default {
   name: "PostComponent",
   data() {
     return {
       posts: [],
       error: "",
-      text: ""
+      text: "",
+      button1: 1,
+      button2: 2,
+      button3: 3,
+      button4: 4,
+      button5:5
     };
   },
   async created() {
@@ -138,9 +117,21 @@ export default {
       this.posts = await PostService.getPosts();
       this.text = "";
     },
-    async createPostForButtonInput() {
-      await PostMoodService.insertButtonInput(getWhichButtonWasSelected());
+    async createPostForButtonInputVerySad() {
+      await PostMoodService.insertButtonInput(this.button1);
     },
+    async createPostForButtonInputSad() {
+      await PostMoodService.insertButtonInput(this.button2);
+    },
+    async createPostForButtonInputNeutral() {
+      await PostMoodService.insertButtonInput(this.button3);
+    },
+    async createPostForButtonInputHappy() {
+      await PostMoodService.insertButtonInput(this.button4);
+    },
+    async createPostForButtonInputVeryHappy() {
+      await PostMoodService.insertButtonInput(this.button5);
+    },            
     async deletePost(id) {
       await PostService.deletePost(id);
       this.posts = await PostService.getPosts();
@@ -150,7 +141,7 @@ export default {
     },
     hideModal() {
       this.$refs.modalRef.hide();
-    }
+    },
   }
 };
 </script>
@@ -205,153 +196,58 @@ td.button-five {
   padding-right: 450px;
 }
 
-button.btn-default-1 {
+input.buttonVerySad {
   float: left;
-  border-radius: 60%;
-  border: 1px solid #ff5b5f;
-  background-color: #ffbdb8;
-  padding: 15px;
-  margin: 15px;
-  outline: 0;
+  margin: 20px;
 }
 
-button.btn-default-1:hover {
+input.buttonSad {
   float: left;
-  border-radius: 60%;
-  border: 1px solid #ff5b5f;
-  background-color: #fccbc7;
-  padding: 15px;
-  margin: 15px;
+  margin: 20px;
+}
+input.buttonNeutral {
+  float: left;
+  margin: 20px;
 }
 
-button.btn-default-1:active {
+input.buttonHappy {
   float: left;
-  border-radius: 60%;
-  border: 1px solid #ff5b5f;
-  background-color: #ff968f;
-  padding: 15px;
-  margin: 15px;
-  transform: translateY(4px);
-  outline: 0;
+  margin: 20px;
 }
 
-button.btn-default-2 {
+input.buttonVeryHappy {
   float: left;
-  border-radius: 60%;
-  border: 1px solid #ff9d5b;
-  background-color: #ffc895;
-  padding: 15px;
-  margin: 15px;
-  outline: 0;
+  margin: 20px;
 }
 
-button.btn-default-2:hover {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #ff9d5b;
-  background-color: #ffb570;
-  padding: 15px;
-  margin: 15px;
+td.button {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
 }
-
-button.btn-default-2:active {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #ff9d5b;
-  background-color: #faaf68;
-  padding: 15px;
-  margin: 15px;
-  transform: translateY(4px);
-  outline: 0;
+td.button-two {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
 }
-
-button.btn-default-3 {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #ffef5b;
-  background-color: #fffd95;
-  padding: 15px;
-  margin: 15px;
-  outline: 0;
+td.button-three {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
 }
-
-button.btn-default-3:hover {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #ffef5b;
-  background-color: #f7f5a0;
-  padding: 15px;
-  margin: 15px;
+td.button-four {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
 }
-
-button.btn-default-3:active {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #ffef5b;
-  background-color: #fffd6b;
-  padding: 15px;
-  margin: 15px;
-  transform: translateY(4px);
-  outline: 0;
-}
-
-button.btn-default-4 {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #7cff5b;
-  background-color: #d0fd87;
-  padding: 15px;
-  margin: 15px;
-  outline: 0;
-}
-
-button.btn-default-4:hover {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #7cff5b;
-  background-color: #bcfc56;
-  padding: 15px;
-  margin: 15px;
-}
-
-button.btn-default-4:active {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #7cff5b;
-  background-color: #afdb68;
-  padding: 15px;
-  margin: 15px;
-  transform: translateY(4px);
-  outline: 0;
-}
-
-button.btn-default-5 {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #5bd658;
-  background-color: #a2ff9e;
-  padding: 15px;
-  margin: 15px;
-  outline: 0;
-}
-
-button.btn-default-5:hover {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #5bd658;
-  background-color: #bcffb8;
-  padding: 15px;
-  margin: 15px;
-}
-
-button.btn-default-5:active {
-  float: left;
-  border-radius: 60%;
-  border: 1px solid #5bd658;
-  background-color: #90ff8a;
-  padding: 15px;
-  margin: 15px;
-  transform: translateY(4px);
-  outline: 0;
+td.button-five {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
 }
 </style>
