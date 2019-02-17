@@ -14,34 +14,43 @@
                 <p class="heading lead">Journal Entry</p>
               </div>
 
-              <div class="col-lg-5" style="padding-top:25px">
-                 <tr>
-                  <h5>How are you feeling today?</h5>
-                    <div>
-                    <tr class="mood-bar-buttons">
-                      <td class="button">
-                        <input type="radio" class="buttonVerySad" :name="buttonVerySad" v-model="button1" v-on:click="createPostForButtonInputVerySad">
-                        <font-awesome-icon icon="sad-tear" size="3x" :style="{ color: '#ff968f'}"/>
-                      </td>
-                      <td class="button-two">
-                        <input type="radio" class="buttonSad" :name="buttonSad" v-model="button2" v-on:click="createPostForButtonInputSad">
-                        <font-awesome-icon icon="frown" size="3x" :style="{ color: '#faaf68'}"/>
-                      </td>
-                      <td class="button-three">
-                        <input type="radio" class="buttonNeutral" :name="buttonNeutral" v-model="button3" v-on:click="createPostForButtonInputNeutral">
-                        <font-awesome-icon icon="meh" size="3x" :style="{ color: '#fffd6b'}"/>
-                      </td>
-                      <td class="button-four">
-                        <input type="radio" class="buttonHappy" :name="buttonHappy" v-model="button4" v-on:click="createPostForButtonInputHappy">
-                        <font-awesome-icon icon="smile" size="3x" :style="{ color: '#afdb68'}"/>
-                      </td>
-                      <td class="button-five">
-                        <input type="radio" class="buttonVeryHappy" :name="buttonVeryHappy" v-model="button5" v-on:click="createPostForButtonInputVeryHappy">
-                        <font-awesome-icon icon="smile-beam" size="3x" :style="{ color: '#90ff8a'}"/>
-                      </td>                                                                                  
-                    </tr>
-                    </div>
-                 </tr>
+              <div class="row">
+                <div class="col-lg-5" style="padding-left:35px; padding-top:25px">
+                  <tr>
+                    <h5>How are you feeling today?</h5>
+                      <div>
+                      <tr class="mood-bar-buttons">
+                        <td class="button">
+                          <input type="radio" class="buttonVerySad" :name="buttonVerySad" v-model="button1" v-on:click="createPostForButtonInputVerySad">
+                          <font-awesome-icon icon="sad-tear" size="3x" :style="{ color: '#ff968f'}"/>
+                        </td>
+                        <td class="button-two">
+                          <input type="radio" class="buttonSad" :name="buttonSad" v-model="button2" v-on:click="createPostForButtonInputSad">
+                          <font-awesome-icon icon="frown" size="3x" :style="{ color: '#faaf68'}"/>
+                        </td>
+                        <td class="button-three">
+                          <input type="radio" class="buttonNeutral" :name="buttonNeutral" v-model="button3" v-on:click="createPostForButtonInputNeutral">
+                          <font-awesome-icon icon="meh" size="3x" :style="{ color: '#fffd6b'}"/>
+                        </td>
+                        <td class="button-four">
+                          <input type="radio" class="buttonHappy" :name="buttonHappy" v-model="button4" v-on:click="createPostForButtonInputHappy">
+                          <font-awesome-icon icon="smile" size="3x" :style="{ color: '#afdb68'}"/>
+                        </td>
+                        <td class="button-five">
+                          <input type="radio" class="buttonVeryHappy" :name="buttonVeryHappy" v-model="button5" v-on:click="createPostForButtonInputVeryHappy">
+                          <font-awesome-icon icon="smile-beam" size="3x" :style="{ color: '#90ff8a'}"/>
+                        </td>                                                                                  
+                      </tr>
+                      </div>
+                  </tr>
+                </div>
+
+                <div class="col-lg-5" style="padding-left:75px; padding-top:20px">
+                  <h5>How many hours did you sleep last night?</h5>
+                  <br>
+                  <input v-model="hoursSlept" placeholder="Hours Slept?">
+                </div>
+
               </div>
 
               <!--Body-->
@@ -56,7 +65,7 @@
 
               <!--Footer-->
               <div class="modal-footer justify-content-center">
-                <a type="button" v-on:click="createPost" class="btn btn-primary waves-effect waves-light">Post</a>
+                <a type="button" v-on:click="createPost(); createPostForHoursSlept()" class="btn btn-primary waves-effect waves-light">Post</a>
               </div>
             </div>
           </div>
@@ -89,6 +98,7 @@
 <script>
 import PostService from "../PostService";
 import PostMoodService from "../PostMoodService";
+import PostSleepService from "../PostSleepService";
 
 export default {
   name: "PostComponent",
@@ -101,7 +111,8 @@ export default {
       button2: 2,
       button3: 3,
       button4: 4,
-      button5:5
+      button5:5,
+      hoursSlept: ""
     };
   },
   async created() {
@@ -131,7 +142,11 @@ export default {
     },
     async createPostForButtonInputVeryHappy() {
       await PostMoodService.insertButtonInput(this.button5);
-    },            
+    },
+    async createPostForHoursSlept() {
+      await PostSleepService.insertHoursSlept(this.hoursSlept);
+      this.hoursSlept = "";
+    },              
     async deletePost(id) {
       await PostService.deletePost(id);
       this.posts = await PostService.getPosts();

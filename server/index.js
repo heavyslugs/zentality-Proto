@@ -10,9 +10,11 @@ app.use(cors());
 
 const posts = require('./routes/api/posts');
 const mood = require('./routes/api/mood');
+const sleep = require('./routes/api/sleep');
 
 app.use('/api/posts', posts);
 app.use('/api/mood', mood);
+app.use('/api/sleep', sleep);
 
 const port = process.env.PORT || 5000;
 
