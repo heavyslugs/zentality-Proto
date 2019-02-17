@@ -48,7 +48,7 @@
                 <div class="col-lg-5" style="padding-left:75px; padding-top:20px">
                   <h5>How many hours did you sleep last night?</h5>
                   <br>
-                  <input v-model="hoursSlept" placeholder="Hours Slept?">
+                  <textarea class="md-textarea form-control" v-model="hoursSlept" placeholder="Hours Slept?" rows="1"></textarea>
                 </div>
 
               </div>
