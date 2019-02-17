@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "auth0-js": "^9.8.1",
+    "aws-amplify": "^1.1.19",
+    "aws-amplify-vue": "^0.2.6-beta.1",
     "axios": "^0.18.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"

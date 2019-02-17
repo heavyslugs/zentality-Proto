@@ -22,10 +22,10 @@
             <a class="nav-link" href="#/aboutus">About Us</a>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right"
-          <ul class="nav-item">
-            <button class="btn btn-danger" onclick="location.href='https://zentality.auth0.com/login?client=RWu8NOKrqDkdB2hGp5E7BzeoFiTY65Ft'" style="flex: 1">Log Out</button>
-          </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <div v-if="signedIn">
+            <amplify-sign-out></amplify-sign-out>
+          </div>
         </ul>
       </div>
       <!-- Hiding Search Bar for now
@@ -35,23 +35,70 @@
       </form>
       -->
     </nav>
-      <component v-bind:is="component"> </component>        
+    <div v-if="!signedIn">
+      <amplify-authenticator></amplify-authenticator>
+    </div>
+    <div v-if="signedIn">
+      <component v-bind:is="component"> </component>
+    </div>    
     </div>
 
 </template>
 
 <script>
+import { Auth } from 'aws-amplify'
+import {AmplifyEventBus} from 'aws-amplify-vue'
 import PostComponent from "@/components/PostComponent.vue";
 
 export default {
   name: "app",
+  props: {
+    msg: String,
+  },
+  created(){
+    this.findUser();
+    AmplifyEventBus.$on('authState', info => {
+      if(info === "signedIn") {
+        this.findUser();
+      } else {
+        //this.$store.state.signedIn = false;
+        this.signedIn = false;
+        //this.$store.state.user = null;
+      }
+    });
+  },
+  //computed: {
+  //  signedIn() {
+  //    return this.$store.state.signedIn; 
+  //  }
+  //},
+  methods: {
+    async findUser() {
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        this.signedIn = true;
+        //this.$store.state.signedIn = true;
+        //this.$store.state.user = user;
+        //console.log(user);
+
+      }
+      catch(err) {
+        //this.$store.state.signedIn = false;
+        //this.$store.state.user = null;
+        this.signedIn = false;
+      }
+
+    }
+
+  },
   components: {
     postComponent: PostComponent
   },
 
   data() {
     return {
-      component: "postComponent"
+      component: "postComponent",
+      signedIn: false
     };
   }
 };

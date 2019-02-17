@@ -1,0 +1,57 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "client-20190206164835-authRole",
+			"UnauthRoleArn": "arn:aws:iam::081091772556:role/client-20190206164835-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::081091772556:role/client-20190206164835-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "client-20190206164835-deployment",
+			"UnauthRoleName": "client-20190206164835-unauthRole",
+			"StackName": "client-20190206164835",
+			"StackId": "arn:aws:cloudformation:us-east-1:081091772556:stack/client-20190206164835/f4491670-2a58-11e9-8934-12391cfc54f4"
+		}
+	},
+	"auth": {
+		"cognito2b4ac4b6": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/client-20190206164835-deployment/amplify-cfn-templates/auth/cognito2b4ac4b6-cloudformation-template.yml",
+				"logicalId": "authcognito2b4ac4b6"
+			},
+			"lastPushTimeStamp": "2019-02-06T23:12:41.211Z",
+			"output": {
+				"AppClientSecret": "100l60p6mn087vgfg8rgte4nk6jno8k91ks66b2ns8umedl5d6ne",
+				"UserPoolId": "us-east-1_ujIqGnd5j",
+				"AppClientIDWeb": "e926nehfc4sff9hfvri9qjd21",
+				"AppClientID": "5vijr6b3ajo796a3qoh3uksa9q",
+				"IdentityPoolId": "us-east-1:42722e46-da6c-4ac5-87b7-ffe5d9e30c26",
+				"IdentityPoolName": "cognito2b4ac4b6_identitypool_2b4ac4b6",
+				"UserPoolName": "cognito2b4ac4b6_userpool_2b4ac4b6"
+			},
+			"lastPushDirHash": "AnzRzAoCFQ+H+EwRC76Nyyx+UPM="
+		}
+	},
+	"function": {
+		"cliente8dbd4ee": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [],
+			"lastBuildTimeStamp": "2019-02-06T23:11:24.974Z",
+			"lastPackageTimeStamp": "2019-02-06T23:11:26.389Z",
+			"distZipFilename": "cliente8dbd4ee-1549494684-latest-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/client-20190206164835-deployment/amplify-cfn-templates/function/cliente8dbd4ee-cloudformation-template.json",
+				"logicalId": "functioncliente8dbd4ee"
+			},
+			"lastPushTimeStamp": "2019-02-06T23:12:41.215Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:081091772556:function:zentality",
+				"Name": "zentality"
+			},
+			"lastPushDirHash": "0+OU0lzS4i2DMgQbOh0KNev2z68="
+		}
+	}
+}

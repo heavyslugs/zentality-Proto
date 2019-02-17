@@ -1,0 +1,20 @@
+{
+    "projectName": "client",
+    "projectPath": "C:\\Users\\krisP\\Documents\\GitHub\\zentality-Proto\\client",
+    "defaultEditor": "sublime",
+    "frontendHandler": {
+        "javascript": "C:\\Users\\krisP\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "vue",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "dist",
+            "BuildCommand": "npm run dev",
+            "StartCommand": "npm.cmd run-script serve"
+        }
+    },
+    "providers": {
+        "awscloudformation": "C:\\Users\\krisP\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-provider-awscloudformation"
+    }
+}
