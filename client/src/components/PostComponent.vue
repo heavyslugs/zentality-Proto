@@ -15,7 +15,7 @@
               </div>
 
               <div class="row">
-                <div class="col-lg-5" style="padding-left:35px; padding-top:25px">
+                <div class="col-lg-5" style="padding-left:35px; padding-top:20px">
                   <tr>
                     <h5>How are you feeling today?</h5>
                       <div>
@@ -45,7 +45,7 @@
                   </tr>
                 </div>
 
-                <div class="col-lg-5" style="padding-left:75px; padding-top:20px">
+                <div class="col-lg-5" style="margin-left:75px; padding-top:20px">
                   <h5>How many hours did you sleep last night?</h5>
                   <br>
                   <textarea class="md-textarea form-control" v-model="hoursSlept" placeholder="Hours Slept?" rows="1"></textarea>
@@ -65,7 +65,7 @@
 
               <!--Footer-->
               <div class="modal-footer justify-content-center">
-                <a type="button" v-on:click="createPost(); createPostForHoursSlept()" class="btn btn-primary waves-effect waves-light">Post</a>
+                <a type="button" v-on:click="createPost(); createPostForHoursSlept()" class="btn btn-primary">Post</a>
               </div>
             </div>
           </div>
