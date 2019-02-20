@@ -30,7 +30,7 @@
                         </td>
                         <td class="button-three">
                           <input type="radio" class="buttonNeutral" :name="buttonNeutral" v-model="button3" v-on:click="createPostForButtonInputNeutral">
-                          <font-awesome-icon icon="meh" size="3x" :style="{ color: '#fffd6b'}"/>
+                          <font-awesome-icon icon="meh" size="3x" :style="{ color: '#ffed6b'}"/>
                         </td>
                         <td class="button-four">
                           <input type="radio" class="buttonHappy" :name="buttonHappy" v-model="button4" v-on:click="createPostForButtonInputHappy">
@@ -45,12 +45,39 @@
                   </tr>
                 </div>
 
-                <div class="col-lg-5" style="margin-left:75px; padding-top:20px">
+                <div class="col-lg-5" style="margin-left:75px; padding-top:18px">
                   <h5>How many hours did you sleep last night?</h5>
                   <br>
                   <textarea class="md-textarea form-control" v-model="hoursSlept" placeholder="Hours Slept?" rows="1"></textarea>
                 </div>
+              </div>
 
+              <div class="row">
+                <div class="col-lg-5" style="padding-left:35px; padding-top:20px">
+                  <h5>How active have you been?</h5>
+                  <tr class="activity-buttons">
+                    <td class="button-active">
+                      <input type="radio" class="buttonOneActive" :name="buttonOneActive" v-model="buttonActive1" v-on:click="createPostForLevelOneActiveRating">
+                      <font-awesome-icon icon="bed" size="3x" :style="{ color: '#ff968f'}"/>
+                    </td>
+                    <td class="button-active-two">
+                      <input type="radio" class="buttonTwoActive" :name="buttonTwoActive" v-model="buttonActive2" v-on:click="createPostForLevelTwoActiveRating">
+                      <font-awesome-icon icon="male" size="3x" :style="{ color: '#faaf68'}"/>
+                    </td>
+                    <td class="button-active-three">
+                      <input type="radio" class="buttonThreeActive" :name="buttonThreeActive" v-model="buttonActive3" v-on:click="createPostForLevelThreeActiveRating">
+                      <font-awesome-icon icon="hiking" size="3x" :style="{ color: '#ffed6b'}"/>
+                    </td>
+                    <td class="button-active-four">
+                      <input type="radio" class="buttonFourActive" :name="buttonFourActive" v-model="buttonActive4" v-on:click="createPostForLevelFourActiveRating">
+                      <font-awesome-icon icon="walking" size="3x" :style="{ color: '#afdb68'}"/>
+                    </td>    
+                    <td class="button-active-five">
+                      <input type="radio" class="buttonFourActive" :name="buttonFourActive" v-model="buttonActive5" v-on:click="createPostForLevelFiveActiveRating">
+                      <font-awesome-icon icon="running" size="3x" :style="{ color: '#90ff8a'}"/>
+                    </td>                                                                                        
+                  </tr>
+                </div>
               </div>
 
               <!--Body-->
@@ -99,6 +126,7 @@
 import PostService from "../PostService";
 import PostMoodService from "../PostMoodService";
 import PostSleepService from "../PostSleepService";
+import PostActiveService from "../PostActiveService";
 
 export default {
   name: "PostComponent",
@@ -111,7 +139,12 @@ export default {
       button2: 2,
       button3: 3,
       button4: 4,
-      button5:5,
+      button5: 5,
+      buttonActive1: 1,
+      buttonActive2: 2,
+      buttonActive3: 3,
+      buttonActive4: 4,
+      buttonActive5: 5,
       hoursSlept: ""
     };
   },
@@ -146,7 +179,22 @@ export default {
     async createPostForHoursSlept() {
       await PostSleepService.insertHoursSlept(this.hoursSlept);
       this.hoursSlept = "";
-    },              
+    },
+    async createPostForLevelOneActiveRating() {
+      await PostActiveService.insertActiveRating(this.button1);
+    },
+    async createPostForLevelTwoActiveRating() {
+      await PostActiveService.insertActiveRating(this.button2);
+    }, 
+    async createPostForLevelThreeActiveRating() {
+      await PostActiveService.insertActiveRating(this.button3);
+    },
+    async createPostForLevelFourActiveRating() {
+      await PostActiveService.insertActiveRating(this.button4);
+    },
+    async createPostForLevelFiveActiveRating() {
+      await PostActiveService.insertActiveRating(this.button5);
+    },    
     async deletePost(id) {
       await PostService.deletePost(id);
       this.posts = await PostService.getPosts();
@@ -260,6 +308,36 @@ td.button-four {
   margin: 10px;
 }
 td.button-five {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
+}
+td.button-active {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
+}
+td.button-active-two {
+  float: fixed;
+  padding: 10px;
+  padding-left:10px;
+  margin: 5px;
+}
+td.button-active-three {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
+}
+td.button-active-four {
+  float: fixed;
+  padding: 5px;
+  padding-left:10px;
+  margin: 10px;
+}
+td.button-active-five {
   float: fixed;
   padding: 5px;
   padding-left:10px;

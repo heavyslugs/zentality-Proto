@@ -8,6 +8,11 @@ import { faSadTear } from '@fortawesome/free-solid-svg-icons'
 import { faMeh } from '@fortawesome/free-solid-svg-icons'
 import { faSmile } from '@fortawesome/free-solid-svg-icons'
 import { faSmileBeam } from '@fortawesome/free-solid-svg-icons'
+import { faBed } from '@fortawesome/free-solid-svg-icons'
+import { faMale } from '@fortawesome/free-solid-svg-icons'
+import { faWalking } from '@fortawesome/free-solid-svg-icons'
+import { faHiking } from '@fortawesome/free-solid-svg-icons'
+import { faRunning } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Amplify, * as AmplifyModules from 'aws-amplify';
 import { AmplifyPlugin } from 'aws-amplify-vue';
@@ -21,6 +26,11 @@ library.add(faFrown)
 library.add(faMeh)
 library.add(faSmile)
 library.add(faSmileBeam)
+library.add(faBed)
+library.add(faMale)
+library.add(faWalking)
+library.add(faHiking)
+library.add(faRunning) 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
