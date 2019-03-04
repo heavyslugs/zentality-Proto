@@ -22,6 +22,11 @@
               <a class="nav-link" href="#/aboutus">About Us</a>
             </li>
           </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <div v-if="signedIn">
+              <amplify-sign-out></amplify-sign-out>
+            </div>
+          </ul>
         </div>
         <!-- Hiding Search Bar for now
         <form class="form-inline my-2 my-lg-0">
@@ -30,7 +35,10 @@
         </form>
         -->
       </nav>
-      <div class="visualizations">
+      <div v-if="!signedIn">
+        <amplify-authenticator></amplify-authenticator>
+      </div>
+      <div v-if="signedIn" class="visualizations">
         <iframe class="embed-responsive-item" src="https://public.tableau.com/views/MoodTimeline/Sheet1?:showVizHome=no&embed=yes&:display_count=yes&publish=yes&:tabs=no&:toolbar=no" width="900" height="600" frameBorder="0"></iframe>
       </div>
 

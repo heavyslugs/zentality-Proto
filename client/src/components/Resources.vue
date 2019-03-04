@@ -22,6 +22,11 @@
             <a class="nav-link" href="#/aboutus">About Us</a>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <div v-if="signedIn">
+            <amplify-sign-out></amplify-sign-out>
+          </div>
+        </ul>        
       </div>
       <!-- Hiding Search Bar for now
       <form class="form-inline my-2 my-lg-0">
@@ -30,7 +35,10 @@
       </form>
       -->
     </nav>
-    
+    <div v-if="!signedIn">
+      <amplify-authenticator></amplify-authenticator>
+    </div>
+    <div v-if="signedIn">
     <div class="content">
         <h2>Resources</h2>
         <p class="lead">Zentality acknowledges the power of multiple sources of assistance. While the purpose of the program is to allow students to journal their thoughts and essentially empower each individual user, sometimes that alone is not enough to find peace. As a result, the team wants to provide a list of resources available to UC students for those seeking additional help.</p>
@@ -111,7 +119,7 @@
 
     </div>
     
-    
+    </div>
 </div>
     
     
