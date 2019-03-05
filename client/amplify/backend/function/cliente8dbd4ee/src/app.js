@@ -80,7 +80,7 @@ app.delete('/items/*', function(req, res) {
 });
 
 app.listen(3000, function() {
-    console.log("App started")
+    //console.log("App started")
 });
 
 // Export the app object. When executing the application local this does nothing. However,

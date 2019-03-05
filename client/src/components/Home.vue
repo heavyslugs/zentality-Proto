@@ -98,7 +98,6 @@ export default {
   data() {
     return {
       component: "postComponent",
-      signedIn: false
     };
   }
 };

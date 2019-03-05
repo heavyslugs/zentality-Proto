@@ -48,9 +48,56 @@
 </template>
 
 <script>
-export default {
+import { Auth } from 'aws-amplify'
+import {AmplifyEventBus} from 'aws-amplify-vue'
 
-}
+export default {
+  name: "app",
+  props: {
+    msg: String,
+  },
+  created(){
+    this.findUser();
+    AmplifyEventBus.$on('authState', info => {
+      if(info === "signedIn") {
+        this.findUser();
+      } else {
+        this.$store.state.signedIn = false;
+        //this.signedIn = false;
+        this.$store.state.user = null;
+      }
+    });
+  },
+  computed: {
+    signedIn() {
+      return this.$store.state.signedIn; 
+    }
+  },
+  methods: {
+    async findUser() {
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        //this.signedIn = true;
+        this.$store.state.signedIn = true;
+        this.$store.state.user = user;
+        //console.log(user);
+
+      }
+      catch(err) {
+        this.$store.state.signedIn = false;
+        this.$store.state.user = null;
+        //this.signedIn = false;
+      }
+
+    }
+
+  },
+
+  data() {
+    return {
+    };
+  }
+};
 </script>
 
 <style>
