@@ -103,7 +103,7 @@
           <p class="error" v-if="error">{{ error }}</p>
           <div class="post-container">
             <div class="post"
-              v-for="(post, index) in posts"
+              v-for="(post, index) in reverseItems"
               v-bind:item="post"
               v-bind:index="index"
               v-bind:key="post._id"
@@ -205,6 +205,12 @@ export default {
     hideModal() {
       this.$refs.modalRef.hide();
     },
+  },
+
+  computed: {
+    reverseItems() {
+      return this.posts.slice().reverse();
+    }
   }
 };
 </script>
