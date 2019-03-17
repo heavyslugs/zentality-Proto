@@ -106,14 +106,42 @@
         </div>      
 
         <h4>External resources:</h4>
+
+        <div class="card border-success mb-3" style="max-width: 50rem;">
+            <div class="card-header">Psychology Today</div>
+            <div class="card-body">
+                <h5 class="card-title">Mental Health Assessment</h5>
+                <p class="card-text">Take this 15-20 minute assessment to examine whether or not you ought to seek the help of a professional therapist.</p>
+                <a href="https://www.psychologytoday.com/us/tests/health/mental-health-assessment" target="_blank" class="card-link">Take the assessment here.</a>
+            </div>
+        </div>    
+
+        <div class="card border-success mb-3" style="max-width: 50rem;">
+            <div class="card-header">National Institute of Mental Health</div>
+            <div class="card-body">
+                <h5 class="card-title">NIMH Resources</h5>
+                <p class="card-text">This page is full of resources to find appropriate help or participate in clinical trials.</p>
+                <a href="https://www.nimh.nih.gov/health/find-help/index.shtml" target="_blank" class="card-link">Read more here.</a>
+            </div>
+        </div>
+
         <div class="card border-success mb-3" style="max-width: 50rem;">
             <div class="card-header">TAO: Therapy Assistance Online</div>
             <div class="card-body">
                 <h5 class="card-title">What is TAO?</h5>
                 <p class="card-text">TAO is a cross-platform, online library full of interactive programs designed to teach life skills and to help you learn resilience to tackle life's hurdles.</p>
-                <a href="https://thepath.taoconnect.org/local/self_help/signup.php" target="_blank" class="card-link">Sign up here</a>
+                <a href="https://thepath.taoconnect.org/local/self_help/signup.php" target="_blank" class="card-link">Sign up here.</a>
             </div>
         </div>        
+
+        <div class="card border-success mb-3" style="max-width: 50rem;">
+            <div class="card-header">MentalHealth.gov</div>
+            <div class="card-body">
+                <h5 class="card-title">Government Resources</h5>
+                <p class="card-text">This government-run site provides one-stop access to US government mental health information.</p>
+                <a href="https://www.mentalhealth.gov/" target="_blank" class="card-link">Explore more here.</a>
+            </div>
+        </div>     
     </div>
 
 
