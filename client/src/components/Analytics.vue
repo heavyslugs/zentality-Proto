@@ -38,11 +38,15 @@
       <div v-if="!signedIn">
         <amplify-authenticator></amplify-authenticator>
       </div>
-      <div v-if="signedIn" class="visualizations">
-        <iframe class="embed-responsive-item" src="https://public.tableau.com/views/MoodTimeline/Sheet1?:showVizHome=no&embed=yes&:display_count=yes&publish=yes&:tabs=no&:toolbar=no" width="900" height="600" frameBorder="0"></iframe>
+      <div class="content">
+        <h2>Analytics</h2>
+        <p class="lead">Using the power of Tableau, a data visualization tool, the team at Zentality is able to compile all of your journal entries into easy-to-see graphs. This will hopefully allow you to examine patterns in your behavior, and empower you.</p>
+        <div class="visualizations">
+          <div v-if="signedIn" class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://public.tableau.com/views/Zentality/Dashboard?:showVizHome=no&embed=yes&:display_count=yes&publish=yes&:tabs=yes&:toolbar=yes" width="900" height="600" frameBorder="0"></iframe>
+          </div>        
+        </div>        
       </div>
-
-    <!--TODO: Change tabs & toolbar parameters to "yes" once we add more visualizations-->
     </div>
 
 </template>
@@ -97,14 +101,18 @@ export default {
     return {
     };
   }
+  
 };
 </script>
 
 <style>
 .visualizations{
-  padding-left: 25%;
-  padding-right: 25%;
-  align-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  align-items: center;
+  position: relative;
+  border: none;
+
 }
 </style>
 
