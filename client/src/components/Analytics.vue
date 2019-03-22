@@ -1,3 +1,4 @@
+<!--This Analytics page runs visualizations based on manually-refreshed data extracts created by Tableau. If we want to schedule refreshes, we will have to pay $70 for the Tableau Server.-->
 <template>
     <div id="app">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
