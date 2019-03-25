@@ -92,7 +92,7 @@
 
               <!--Footer-->
               <div class="modal-footer justify-content-center">
-                <a type="button" v-on:click="createPost(); createPostForHoursSlept()" class="btn btn-primary">Post</a>
+                <a type="button" v-on:click="createPost(); createPostForHoursSlept()" class="btn btn-success">Post</a>
               </div>
             </div>
           </div>
