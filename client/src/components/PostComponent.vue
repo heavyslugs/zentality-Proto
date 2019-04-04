@@ -11,7 +11,7 @@
             <div class="modal-content">
               <!--Header-->
               <div class="modal-header">
-                <p class="heading lead">Journal Entry</p>
+                <p class="heading lead">Create Journal Entry</p>
               </div>
 
               <div class="row">
@@ -84,7 +84,7 @@
               <div class="modal-body">
                 <!--Basic textarea-->
                 <div class="md-form">
-                  <h5>Create Your Journal Entry Here</h5>
+                  <h5>Anything else bothering you? Log your thoughts here:</h5>
                   <textarea type="text" id="create-post" class="md-textarea form-control" v-model="text" placeholder="Create a post" rows="5"></textarea>
                 </div>
 
@@ -92,7 +92,7 @@
 
               <!--Footer-->
               <div class="modal-footer justify-content-center">
-                <a type="button" v-on:click="createPost(); createPostForHoursSlept()" class="btn btn-success">Post</a>
+                <a type="button" v-on:click="createPost(); createPostForHoursSlept()" class="btn btn-primary">Post</a>
               </div>
             </div>
           </div>

@@ -1,57 +1,104 @@
 {
 	"providers": {
 		"awscloudformation": {
-			"AuthRoleName": "client-20190206164835-authRole",
-			"UnauthRoleArn": "arn:aws:iam::081091772556:role/client-20190206164835-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::081091772556:role/client-20190206164835-authRole",
+			"AuthRoleName": "client-20190324005505-authRole",
+			"UnauthRoleArn": "arn:aws:iam::081091772556:role/client-20190324005505-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::081091772556:role/client-20190324005505-authRole",
 			"Region": "us-east-1",
-			"DeploymentBucketName": "client-20190206164835-deployment",
-			"UnauthRoleName": "client-20190206164835-unauthRole",
-			"StackName": "client-20190206164835",
-			"StackId": "arn:aws:cloudformation:us-east-1:081091772556:stack/client-20190206164835/f4491670-2a58-11e9-8934-12391cfc54f4"
+			"DeploymentBucketName": "client-20190324005505-deployment",
+			"UnauthRoleName": "client-20190324005505-unauthRole",
+			"StackName": "client-20190324005505",
+			"StackId": "arn:aws:cloudformation:us-east-1:081091772556:stack/client-20190324005505/fd4a1010-4df0-11e9-b4a6-1297d6a5b478"
 		}
 	},
 	"auth": {
-		"cognito2b4ac4b6": {
+		"cognito248a5c5c": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/client-20190206164835-deployment/amplify-cfn-templates/auth/cognito2b4ac4b6-cloudformation-template.yml",
-				"logicalId": "authcognito2b4ac4b6"
+				"s3TemplateURL": "https://s3.amazonaws.com/client-20190324005505-deployment/amplify-cfn-templates/auth/cognito248a5c5c-cloudformation-template.yml",
+				"logicalId": "authcognito248a5c5c"
 			},
-			"lastPushTimeStamp": "2019-02-06T23:12:41.211Z",
+			"lastPushTimeStamp": "2019-03-25T18:08:30.772Z",
 			"output": {
-				"AppClientSecret": "100l60p6mn087vgfg8rgte4nk6jno8k91ks66b2ns8umedl5d6ne",
-				"UserPoolId": "us-east-1_ujIqGnd5j",
-				"AppClientIDWeb": "e926nehfc4sff9hfvri9qjd21",
-				"AppClientID": "5vijr6b3ajo796a3qoh3uksa9q",
-				"IdentityPoolId": "us-east-1:42722e46-da6c-4ac5-87b7-ffe5d9e30c26",
-				"IdentityPoolName": "cognito2b4ac4b6_identitypool_2b4ac4b6",
-				"UserPoolName": "cognito2b4ac4b6_userpool_2b4ac4b6"
+				"AppClientSecret": "nhtudpf7j3np99u6klfosie813hfit3vs95tlfskiecai1vt45n",
+				"UserPoolId": "us-east-1_uumfrvMmv",
+				"AppClientIDWeb": "11lhp4rl68cpbgodkkbaqrba38",
+				"AppClientID": "3m4ecr4o5g0lqvfgg21fh14es3",
+				"IdentityPoolId": "us-east-1:ea34d22e-888d-4fc5-9374-86b3e10bbbc0",
+				"IdentityPoolName": "cognito248a5c5c_identitypool_248a5c5c",
+				"UserPoolName": "cognito248a5c5c_userpool_248a5c5c"
 			},
-			"lastPushDirHash": "AnzRzAoCFQ+H+EwRC76Nyyx+UPM="
+			"lastPushDirHash": "yYcy9V/kzUWIIQK2NsQbMHM03Ao="
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/client-20190324005505-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2019-03-25T18:08:30.774Z",
+			"output": {
+				"CloudFrontSecureURL": "https://d1ixyendek9ha.cloudfront.net",
+				"S3BucketSecureURL": "https://client-20190324005600-hostingbucket.s3.amazonaws.com",
+				"WebsiteURL": "http://client-20190324005600-hostingbucket.s3-website-us-east-1.amazonaws.com",
+				"CloudFrontDistributionID": "E8R2ZKNLOIB02",
+				"Region": "us-east-1",
+				"HostingBucketName": "client-20190324005600-hostingbucket",
+				"CloudFrontDomainName": "d1ixyendek9ha.cloudfront.net"
+			},
+			"lastPushDirHash": "kc1l5D4Hml8ZqpS5pT2x1yOQM5E="
 		}
 	},
 	"function": {
-		"cliente8dbd4ee": {
+		"zentalityfunction": {
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true,
 			"dependsOn": [],
-			"lastBuildTimeStamp": "2019-02-06T23:11:24.974Z",
-			"lastPackageTimeStamp": "2019-02-06T23:11:26.389Z",
-			"distZipFilename": "cliente8dbd4ee-1549494684-latest-build.zip",
+			"lastBuildTimeStamp": "2019-03-24T23:18:15.747Z",
+			"lastPackageTimeStamp": "2019-03-25T18:07:28.660Z",
+			"distZipFilename": "zentalityfunction-1553537247-latest-build.zip",
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/client-20190206164835-deployment/amplify-cfn-templates/function/cliente8dbd4ee-cloudformation-template.json",
-				"logicalId": "functioncliente8dbd4ee"
+				"s3TemplateURL": "https://s3.amazonaws.com/client-20190324005505-deployment/amplify-cfn-templates/function/zentalityfunction-cloudformation-template.json",
+				"logicalId": "functionzentalityfunction"
 			},
-			"lastPushTimeStamp": "2019-02-06T23:12:41.215Z",
+			"lastPushTimeStamp": "2019-03-25T18:08:30.779Z",
 			"output": {
 				"Region": "us-east-1",
-				"Arn": "arn:aws:lambda:us-east-1:081091772556:function:zentality",
-				"Name": "zentality"
+				"Arn": "arn:aws:lambda:us-east-1:081091772556:function:zentalityfunction",
+				"Name": "zentalityfunction"
 			},
-			"lastPushDirHash": "0+OU0lzS4i2DMgQbOh0KNev2z68="
+			"lastPushDirHash": "3DrI/iH82MnZ2v8lMRTSl/oORIk="
+		}
+	},
+	"api": {
+		"zentalityapi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "zentalityfunction",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/client-20190324005505-deployment/amplify-cfn-templates/api/zentalityapi-cloudformation-template.json",
+				"logicalId": "apizentalityapi"
+			},
+			"lastPushTimeStamp": "2019-03-25T18:08:30.776Z",
+			"output": {
+				"ApiName": "zentalityapi",
+				"RootUrl": "https://ly7oo0a325.execute-api.us-east-1.amazonaws.com/Prod"
+			},
+			"lastPushDirHash": "43QDvvOCcKVL1+tWWjgz5KxzCZ0="
 		}
 	}
 }
