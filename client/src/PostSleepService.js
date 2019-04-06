@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/sleep/';
+const url = 'https://fqjjnkik27.execute-api.us-east-1.amazonaws.com/sleep/sleep';
 
 class PostSleepService {
 

@@ -40,7 +40,7 @@
     </div>
     <div v-if="signedIn">
       <component v-bind:is="component"> </component>
-    </div>    
+    </div>
     </div>
 
 </template>
@@ -87,9 +87,7 @@ export default {
         this.$store.state.user = null;
         //this.signedIn = false;
       }
-
     }
-
   },
   components: {
     postComponent: PostComponent
@@ -97,7 +95,7 @@ export default {
 
   data() {
     return {
-      component: "postComponent",
+      component: "postComponent"
     };
   }
 };

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/mood/';
+const url = 'https://jycb6ryba4.execute-api.us-east-1.amazonaws.com/mood/mood';
 
 class PostMoodService {
 

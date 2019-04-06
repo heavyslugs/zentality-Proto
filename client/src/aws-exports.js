@@ -2,10 +2,35 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-1",
-    "aws_cognito_identity_pool_id": "us-east-1:42722e46-da6c-4ac5-87b7-ffe5d9e30c26",
+    "aws_cognito_identity_pool_id": "us-east-1:c76568a5-bf12-4fd7-ba49-af775b0f5589",
     "aws_cognito_region": "us-east-1",
-    "aws_user_pools_id": "us-east-1_ujIqGnd5j",
-    "aws_user_pools_web_client_id": "e926nehfc4sff9hfvri9qjd21"
+    "aws_user_pools_id": "us-east-1_67H8QASql",
+    "aws_user_pools_web_client_id": "4n62emt693t3postj81e095hjn",
+    "aws_content_delivery_bucket": "client-20190404122314-hostingbucket",
+    "aws_content_delivery_bucket_region": "us-east-1",
+    "aws_content_delivery_url": "http://client-20190404122314-hostingbucket.s3-website-us-east-1.amazonaws.com",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "postsApi",
+            "endpoint": "https://zi949gj70c.execute-api.us-east-1.amazonaws.com/Prod",
+            "region": "us-east-1"
+        },
+        {
+            "name": "activeApi",
+            "endpoint": "https://jyy9tytn6e.execute-api.us-east-1.amazonaws.com/Prod",
+            "region": "us-east-1"
+        },
+        {
+            "name": "moodAPI",
+            "endpoint": "https://jycb6ryba4.execute-api.us-east-1.amazonaws.com/Prod",
+            "region": "us-east-1"
+        },
+        {
+            "name": "sleepAPI",
+            "endpoint": "https://fqjjnkik27.execute-api.us-east-1.amazonaws.com/Prod",
+            "region": "us-east-1"
+        }
+    ]
 };
 
 
