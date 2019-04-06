@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/posts/';
+const url = 'https://zi949gj70c.execute-api.us-east-1.amazonaws.com/posts/posts/%7Bproxy+%7D';
+//const url = 'http://ec2-3-89-125-248.compute-1.amazonaws.com:5000/api/active'
 
 class PostService {
     //Get Posts
@@ -8,7 +9,7 @@ class PostService {
         return new Promise (async (resolve, reject) => {
             try {
                 const res = await axios.get(url);
-                const data = res.data;
+                const data = res.data.posts;
                 resolve(
                     data.map(post => ({
                         ...post,
@@ -20,6 +21,7 @@ class PostService {
             }
         });
     }
+    
     //Create Post
     static insertPost(text) {
         return axios.post(url, {

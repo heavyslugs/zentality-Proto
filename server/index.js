@@ -9,8 +9,14 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const posts = require('./routes/api/posts');
+const mood = require('./routes/api/mood');
+const sleep = require('./routes/api/sleep');
+const active = require('./routes/api/active');
 
 app.use('/api/posts', posts);
+app.use('/api/mood', mood);
+app.use('/api/sleep', sleep);
+app.use('/api/active', active);
 
 const port = process.env.PORT || 5000;
 

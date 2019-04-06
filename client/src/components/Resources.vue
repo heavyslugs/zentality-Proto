@@ -22,6 +22,11 @@
             <a class="nav-link" href="#/aboutus">About Us</a>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <div v-if="signedIn">
+            <amplify-sign-out></amplify-sign-out>
+          </div>
+        </ul>        
       </div>
       <!-- Hiding Search Bar for now
       <form class="form-inline my-2 my-lg-0">
@@ -30,7 +35,10 @@
       </form>
       -->
     </nav>
-    
+    <div v-if="!signedIn">
+      <amplify-authenticator></amplify-authenticator>
+    </div>
+    <div v-if="signedIn">
     <div class="content">
         <h2>Resources</h2>
         <p class="lead">Zentality acknowledges the power of multiple sources of assistance. While the purpose of the program is to allow students to journal their thoughts and essentially empower each individual user, sometimes that alone is not enough to find peace. As a result, the team wants to provide a list of resources available to UC students for those seeking additional help.</p>
@@ -98,29 +106,104 @@
         </div>      
 
         <h4>External resources:</h4>
+
+        <div class="card border-success mb-3" style="max-width: 50rem;">
+            <div class="card-header">Psychology Today</div>
+            <div class="card-body">
+                <h5 class="card-title">Mental Health Assessment</h5>
+                <p class="card-text">Take this 15-20 minute assessment to examine whether or not you ought to seek the help of a professional therapist.</p>
+                <a href="https://www.psychologytoday.com/us/tests/health/mental-health-assessment" target="_blank" class="card-link">Take the assessment here.</a>
+            </div>
+        </div>    
+
+        <div class="card border-success mb-3" style="max-width: 50rem;">
+            <div class="card-header">National Institute of Mental Health</div>
+            <div class="card-body">
+                <h5 class="card-title">NIMH Resources</h5>
+                <p class="card-text">This page is full of resources to find appropriate help or participate in clinical trials.</p>
+                <a href="https://www.nimh.nih.gov/health/find-help/index.shtml" target="_blank" class="card-link">Read more here.</a>
+            </div>
+        </div>
+
         <div class="card border-success mb-3" style="max-width: 50rem;">
             <div class="card-header">TAO: Therapy Assistance Online</div>
             <div class="card-body">
                 <h5 class="card-title">What is TAO?</h5>
                 <p class="card-text">TAO is a cross-platform, online library full of interactive programs designed to teach life skills and to help you learn resilience to tackle life's hurdles.</p>
-                <a href="https://thepath.taoconnect.org/local/self_help/signup.php" target="_blank" class="card-link">Sign up here</a>
+                <a href="https://thepath.taoconnect.org/local/self_help/signup.php" target="_blank" class="card-link">Sign up here.</a>
             </div>
         </div>        
+
+        <div class="card border-success mb-3" style="max-width: 50rem;">
+            <div class="card-header">MentalHealth.gov</div>
+            <div class="card-body">
+                <h5 class="card-title">Government Resources</h5>
+                <p class="card-text">This government-run site provides one-stop access to US government mental health information.</p>
+                <a href="https://www.mentalhealth.gov/" target="_blank" class="card-link">Explore more here.</a>
+            </div>
+        </div>     
     </div>
 
 
     </div>
     
-    
+    </div>
 </div>
     
     
 </template>
 
 <script>
+import { Auth } from 'aws-amplify'
+import {AmplifyEventBus} from 'aws-amplify-vue'
+
 export default {
-    
-}
+  name: "app",
+  props: {
+    msg: String,
+  },
+  created(){
+    this.findUser();
+    AmplifyEventBus.$on('authState', info => {
+      if(info === "signedIn") {
+        this.findUser();
+      } else {
+        this.$store.state.signedIn = false;
+        //this.signedIn = false;
+        this.$store.state.user = null;
+      }
+    });
+  },
+  computed: {
+    signedIn() {
+      return this.$store.state.signedIn; 
+    }
+  },
+  methods: {
+    async findUser() {
+      try {
+        const user = await Auth.currentAuthenticatedUser();
+        //this.signedIn = true;
+        this.$store.state.signedIn = true;
+        this.$store.state.user = user;
+        //console.log(user);
+
+      }
+      catch(err) {
+        this.$store.state.signedIn = false;
+        this.$store.state.user = null;
+        //this.signedIn = false;
+      }
+
+    }
+
+  },
+
+  data() {
+    return {
+    };
+  }
+};
 </script>
 
 <style>
